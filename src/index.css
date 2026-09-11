@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@theme {
+  --font-serif: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: #146B5D;
+  color: #FAF9F6;
+}
+
+a:focus-visible, button:focus-visible, [role="button"]:focus-visible,
+input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid #C98A1F;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F7F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #4FA394;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #146B5D;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24'%3E%3Cpath d='M5.08814 5.36283L10.4791 20.7254C10.781 21.5857 11.9824 21.6263 12.3417 20.7884L15.0192 14.5442C15.1203 14.3083 15.3083 14.1203 15.5442 14.0192L21.7884 11.3417C22.6263 10.9824 22.5857 9.78096 21.7254 9.47907L6.36285 4.08812C5.57154 3.81044 4.81046 4.57152 5.08814 5.36283Z' fill='%230D3B32' stroke='white' stroke-width='1'/%3E%3C/svg%3E") 5 4, auto;
+  }
+  a, button, [role="button"], input, textarea, select, summary, label {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24'%3E%3Cpath d='M5.08814 5.36283L10.4791 20.7254C10.781 21.5857 11.9824 21.6263 12.3417 20.7884L15.0192 14.5442C15.1203 14.3083 15.3083 14.1203 15.5442 14.0192L21.7884 11.3417C22.6263 10.9824 22.5857 9.78096 21.7254 9.47907L6.36285 4.08812C5.57154 3.81044 4.81046 4.57152 5.08814 5.36283Z' fill='%23C98A1F' stroke='white' stroke-width='1'/%3E%3C/svg%3E") 7 6, pointer;
+  }
+}
+
+/* Grow-on-hover na klikalnych ikonach/kafelkach - sygnalizuje klikalnosc bez petli animacji */
+.hover-pulse {
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+.group:hover .hover-pulse {
+  transform: scale(1.28);
+  filter: drop-shadow(0 0 8px rgba(20, 107, 93, 0.45));
+}
+@media (prefers-reduced-motion: reduce) {
+  .group:hover .hover-pulse {
+    transform: none;
+    filter: none;
+  }
+}

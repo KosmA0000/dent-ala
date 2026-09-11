@@ -1,0 +1,16 @@
+Lead #25 — Iwona Okoska Gabinet Stomatologiczny (faktyczna nazwa na stronie: Irmina Gralec Niepubliczny Zakład Opieki Zdrowotnej "Dent-Ala" — imię/nazwisko w leadzie nie zgadza się z nazwiskiem właścicielki na stronie, ale to nadal ten sam aktywny gabinet stomatologiczny pod tym adresem)
+Miasto: Starachowice, ul. Spółdzielcza 21, 27-200 Starachowice
+Telefon: 41 275 65 60 / 792 704 760 (Prywatny Gabinet Ortodontyczny: 604 137 059)
+Email: dent-ala@outlook.com
+Oryginalna strona: https://dent-ala.pl
+Nowa strona (hostowana lokalnie): http://localhost:8911/
+Folder: sites/25-dent-ala/site/
+
+Zescrapowano wszystkie podstrony: index, O_nas, Zakres_uslug, Galeria (46 zdjęć), Kontakt, Dojazd, Rejestracja.
+
+Uwagi:
+- Sekcja "Zakres usług" jest bardzo obszerna w oryginale (8 kategorii zabiegów) — zbudowana jako akordeon zgodnie ze skillem.
+- Strona "O_nas" wspomina dokument "Informacja o wpływie działalności... na zdrowie ludzi i środowisko", który "znajduje się w zakładce Galeria" — odnaleziono ten skan (plik 1624882449Informacja...) wśród zdjęć galerii i umieszczono jako link do dokumentu w sekcji O nas, dokładnie tak jak wskazuje oryginalny tekst.
+- Galeria: 45 miniaturek (150x100, mini_*.JPG) na stronie oryginału — dla wszystkich odnaleziono i pobrano pełnowymiarowe wersje (bez prefiksu "mini_", 1024x768 lub 768x1024, prawdziwe zdjęcia gabinetu, zweryfikowane rozmiarem pliku 130-380KB, nie strony błędu).
+- WAŻNE (nie wprowadzone na nową stronę, celowo): oryginalna strona ma w stopce zestaw linków spamowych/hazardowych (maritbet, film izle, casibom, casino siteleri, deneme bonusu) — typowy ślad przejęcia/włamania na starej stronie WordPress/CMS. To nie jest autentyczna treść praktyki, więc NIE zostały przeniesione na nową stronę (byłoby to szkodliwe dla użytkowników). Flaguję to jako sygnał, że oryginalna domena mogła być częściowo skompromitowana — warto by klient to wiedział niezależnie od tej strony.
+- Brak konfliktu z innymi równoległymi instancjami dla tego leada (sprawdzono folder sites/, tylko jeden folder 25-dent-ala).
