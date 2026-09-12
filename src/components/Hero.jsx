@@ -46,21 +46,21 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="hero"
-      className="relative min-h-[100svh] flex flex-col justify-start md:justify-center overflow-hidden bg-[#0D3B32]"
+      className="relative min-h-[100svh] flex flex-col justify-start md:justify-center overflow-hidden bg-[#12181A]"
     >
       <div ref={imgWrapRef} className="absolute inset-0 w-full h-full overflow-hidden">
         <img
           ref={imgRef}
           src={heroImg}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover opacity-75 sm:opacity-80"
+          className="absolute inset-0 w-full h-full object-cover object-top"
           style={{ willChange: "transform" }}
         />
       </div>
 
       <div className="absolute -top-24 -right-24 w-[34rem] h-[34rem] rounded-full bg-[#146B5D]/25 blur-[100px] pointer-events-none" />
       <div className="absolute -bottom-32 -left-20 w-[28rem] h-[28rem] rounded-full bg-[#C98A1F]/15 blur-[110px] pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0D3B32]/95 via-[#0D3B32]/55 to-[#0D3B32]/20" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#12181A]/95 via-[#12181A]/45 to-transparent" />
 
       <div className="relative z-10 w-full px-4 sm:px-6 lg:px-8 pt-24 pb-14 sm:pt-28 sm:pb-20 max-w-6xl mx-auto">
         <FadeUp>
@@ -76,49 +76,36 @@ export default function Hero() {
           {hero.tytul}
         </MaskedHeading>
 
-        <FadeUp delay={0.15} className="mt-6 sm:mt-7 grid sm:grid-cols-[auto_1fr] gap-3 max-w-3xl">
-          <div className="flex flex-col gap-3">
+        <FadeUp delay={0.15} className="mt-6 sm:mt-7 flex flex-col gap-3 max-w-md">
+          <a
+            href={clinic.telefonHref}
+            className="group rounded-3xl bg-[#146B5D] hover:bg-[#0D453B] text-white transition-all duration-300 p-5 sm:p-6 flex flex-col justify-center items-start gap-2 min-w-0 shadow-lg hover:shadow-xl hover:scale-[1.01]"
+          >
+            <div className="flex items-center gap-2 text-xs uppercase font-bold tracking-widest text-[#C98A1F]">
+              <Phone className="w-3.5 h-3.5" strokeWidth={2} />
+              <span>Rejestracja telefoniczna</span>
+            </div>
+            <span className="font-serif text-xl sm:text-2xl text-white leading-tight tabular-nums font-medium">
+              {clinic.telefon}
+            </span>
+          </a>
+
+          <div className="grid grid-cols-2 gap-2">
             <a
-              href={clinic.telefonHref}
-              className="group rounded-3xl bg-[#146B5D] hover:bg-[#0D453B] text-white transition-all duration-300 p-5 sm:p-6 flex flex-col justify-center items-start gap-2 min-w-0 shadow-lg hover:shadow-xl hover:scale-[1.01]"
+              href={"mailto:" + clinic.email}
+              className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:border-[#C98A1F] transition-colors p-3.5 flex items-center gap-2 min-w-0"
             >
-              <div className="flex items-center gap-2 text-xs uppercase font-bold tracking-widest text-[#C98A1F]">
-                <Phone className="w-3.5 h-3.5" strokeWidth={2} />
-                <span>Rejestracja telefoniczna</span>
-              </div>
-              <span className="font-serif text-xl sm:text-2xl text-white leading-tight tabular-nums font-medium">
-                {clinic.telefon}
-              </span>
+              <Mail className="w-4 h-4 text-[#C98A1F] shrink-0" strokeWidth={1.6} />
+              <span className="text-xs text-[#FAF9F6]/90 truncate">{clinic.email}</span>
             </a>
 
-            <div className="grid grid-cols-2 gap-2">
-              <a
-                href={"mailto:" + clinic.email}
-                className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:border-[#C98A1F] transition-colors p-3.5 flex items-center gap-2 min-w-0"
-              >
-                <Mail className="w-4 h-4 text-[#C98A1F] shrink-0" strokeWidth={1.6} />
-                <span className="text-xs text-[#FAF9F6]/90 truncate">{clinic.email}</span>
-              </a>
-
-              <a
-                href="#kontakt"
-                className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:border-[#C98A1F] transition-colors p-3.5 flex items-center gap-2 min-w-0"
-              >
-                <MapPin className="w-4 h-4 text-[#C98A1F] shrink-0" strokeWidth={1.6} />
-                <span className="text-xs text-[#FAF9F6]/90 truncate">{hero.lokalizacjaKrotko}</span>
-              </a>
-            </div>
-          </div>
-
-          <div className="rounded-3xl bg-white/10 backdrop-blur-md border border-white/20 p-5 sm:p-6">
-            <div className="mb-4">
-              <p className="text-[11px] uppercase tracking-[0.18em] text-[#C98A1F] font-semibold">{hero.tagline}</p>
-            </div>
-            <div className="grid gap-2">
-              <div className="rounded-2xl bg-[#0D3B32]/50 border border-white/10 px-3.5 py-2.5 text-[13px] text-[#FAF9F6]/90 leading-snug">
-                {clinic.opisKrotki}
-              </div>
-            </div>
+            <a
+              href="#kontakt"
+              className="rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 hover:border-[#C98A1F] transition-colors p-3.5 flex items-center gap-2 min-w-0"
+            >
+              <MapPin className="w-4 h-4 text-[#C98A1F] shrink-0" strokeWidth={1.6} />
+              <span className="text-xs text-[#FAF9F6]/90 truncate">{hero.lokalizacjaKrotko}</span>
+            </a>
           </div>
         </FadeUp>
       </div>
